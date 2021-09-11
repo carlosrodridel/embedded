@@ -37,13 +37,13 @@ int main(){
     printf("message sent\r\n");
 
     //receiving data from the server
-    if (recv(socket_id, rep, 5000, 0)<0)
-    {
-        printf("Failed");
-        return -1;
-    }
+
     printf("Data received");
-    puts(rep);
+    while (recv(socket_id, rep, 500, 0)>0)
+    {
+        puts(rep);
+    }
+    
     close(socket_id);
     
           

@@ -6,7 +6,7 @@ typedef struct data
 {
     char name[30];
     unsigned long phone;
-}data;
+}data; 
 
 
 typedef struct node{

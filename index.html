@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+
+    <script src=\"https://unpkg.com/scrollreveal\"></script>
+    <script src=\"https://kit.fontawesome.com/cef798d11a.js\" crossorigin=\"anonymous\"></script>
+    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\">
+    <link href=\"https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap\" rel=\"stylesheet\">
+    <title>Carlos Rodriguez D</title>
+</head>
+<body>
+    <style>
+    html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+:root {
+    --dark: #384259;
+    --red: #F73859;
+    --green: #7AC7C4;
+    --green-light: #C4EDDE;
+}
+
+#navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--red);
+    z-index:999;
+}
+
+.navbar-list{
+    display: flex;
+    margin-right: 3rem;
+    list-style-type: none;
+}
+
+.navbar-list a{
+    display: block;
+    padding: 2rem;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.navbar-list a:hover{
+    background-color: var(--green);
+}
+
+#welcome-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(45deg, rgba(75,88,117,.95) 21%, rgba(56,66,89,.95) 100%), url(\"https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940\");
+    background-size:cover;
+}
+
+h1{
+    font-size: 4.5em;
+    font-weight: 700;
+    color: var(--green-light);
+}
+
+#welcome-section > p{
+    color: var(--red);
+    margin-top: 5px;
+    font-size: 1.5em;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-style: italic;
+}
+
+#projects {
+    background-color: var(--green);
+    text-align: center;
+    padding: 50px 2rem;
+    width: 100%;
+}
+
+h2{
+    color: white;
+    font-size: 2.8em;
+    border-bottom: 2px white solid;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 80px;
+}
+
+.project-img {
+    height: calc(100% - 4rem);
+    width: 100%;
+    object-fit:fill;
+}
+
+.project-tile {
+    background: var(--dark);
+    overflow: hidden;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow:  12px 12px 24px #70b7b4,
+                 -12px -12px 24px #84d7d4;
+    transition:  transform .2s;
+}
+
+.project-tile:hover{
+    transform: scale(1.05);
+}
+
+.projects-container{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(320px,450px));
+    justify-content: center;
+    grid-gap: 5rem;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.project-tittle {
+    display: block;
+    color: white;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    font-weight: 400;
+    padding: 15px;
+}
+
+#profile-link{
+    margin-top: 50px;
+    text-decoration: none;
+    color: white;
+    padding: 20px 40px;
+    font-size: 1.2em;
+    background: var(--dark);
+    transition: background-color .3s;
+    box-shadow:  12px 12px 24px #70b7b4,
+                 -12px -12px 24px #84d7d4;
+}
+
+#profile-link:hover{
+    background-color: var(--red);
+}
+
+i {
+    color:white;
+    margin-left: 5px;
+    transition:  transform .3s ease-out;
+}
+
+#profile-link:hover > i{
+    transform: translate(15px, 0%);
+}
+
+#contact {
+    background-color: var(--dark);
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    padding: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+h3{
+    font-size: 3em;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+.contact-medias{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-medias-link{
+    letter-spacing: 2px;
+    font-size: 1.6em;
+    padding: 10px 30px;
+    text-decoration:none;
+    color: white;
+}
+
+.contact-medias-link:hover{
+    transform: scale(1.1);
+}
+
+@media (max-width: 750px) {
+
+    html {
+        font-size: 12px;
+    }
+    .navbar-list {
+        margin: auto;
+    }
+    .projects-container{
+        grid-template-columns: minmax(320px,450px);
+        grid-template-rows: auto-fill;
+    }
+}
+
+    </style>
+    <nav id=\"navbar\">
+        <ul class=\"navbar-list\">
+            <li><a href=\"#welcome-section\">Welcome</a></li>
+            <li><a href=\"#projects\">Projects</a></li>
+            <li><a href=\"#contact\">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id=\"welcome-section\">
+        <h1>Carlos Rodriguez D</h1>
+        <p>Frontend Web Developer</p>
+    </section>
+
+    <section id=\"projects\">
+        <h2>Here are some of my projects</h2>
+        <div class=\"projects-container\">
+            <a target=\"_BLANK\" href=\"https://codepen.io/transductancia/pen/mdWGoov\" class=\"project-tile\">
+                <img class=\"project-img\" src=\"https://github.com/Transconductancia/FreeCodeCamp/blob/main/ResponsiveWeb/PersonalPortfolio/Tribute.png?raw=true\" alt=\"Project 1: Tibute page\">
+                <p class=\"project-tittle\">Tribute page</p>
+            </a>
+            
+            <a target=\"_BLANK\" href=\"https://codepen.io/transductancia/pen/MWpPvom\" class=\"project-tile\">
+                <img class=\"project-img\" src=\"https://github.com/Transconductancia/FreeCodeCamp/blob/main/ResponsiveWeb/PersonalPortfolio/Survey.png?raw=true\" alt=\"Project 2: Survey form\">
+                <p class=\"project-tittle\">Survey form</p>
+            </a>
+
+            <a  target=\"_BLANK\" href=\"https://codepen.io/transductancia/pen/wvJNyea\" class=\"project-tile\">
+                <img class=\"project-img\" src=\"https://github.com/Transconductancia/FreeCodeCamp/blob/main/ResponsiveWeb/PersonalPortfolio/Product.png?raw=true\" alt=\"Project 3: Product Page\">
+                <p class=\"project-tittle\">Product page</p>
+            </a>
+
+            <a target=\"_BLANK\" href=\"https://codepen.io/transductancia/pen/eYvXZjG\" class=\"project-tile\">
+                <img class=\"project-img\" src=\"https://github.com/Transconductancia/FreeCodeCamp/blob/main/ResponsiveWeb/PersonalPortfolio/Documentation.png?raw=true\" alt=\"Project 4: Documentation page\">
+                <p class=\"project-tittle\">Documentation page</p>
+            </a>
+        </div>
+        <a  target=\"_blank\" href=\"https://codepen.io/transductancia\" id=\"profile-link\">
+            More info <i class=\"fas fa-angle-double-right\"></i>
+        </a>
+    </section>
+    
+    <section id=\"contact\">
+        <div>
+            <h3>Are you interested in my work?...</h3>
+        </div>
+        <div class=\"contact-medias\">
+            <a class=\"contact-medias-link\" href=\"https://www.linkedin.com/in/carlos-rodriguez-delghams-0b4297149/\" target=\"_blank\" rel=\"noopener noreferrer\">
+                 <i class=\"fab fa-linkedin\"></i>
+                LinkedIn
+            </a>
+
+            <a class=\"contact-medias-link\" href=\"https://github.com/Transconductancia\" target=\"_blank\" rel=\"noopener noreferrer\">
+                <i class=\"fab fa-github-square\"></i>
+                GitHub
+            </a>
+
+        
+            <a class=\"contact-medias-link\" href=\"https://www.instagram.com/carlos.rodriguezdel/\" target=\"_blank\" rel=\"noopener noreferrer\">
+                <i class=\"fab fa-instagram-square\"></i>
+                Instagram
+            </a>
+        
+            <a class=\"contact-medias-link\" href=\"mailto: carlos.rodridelghams@gmail.com\" target=\"_blank\" rel=\"noopener noreferrer\">               <i class=\"fas fa-envelope-square\"></i>
+                Send me an Email
+            </a>
+        </div>
+    </section>
+</body>
+</html>
